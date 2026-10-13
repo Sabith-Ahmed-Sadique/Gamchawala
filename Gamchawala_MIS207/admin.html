@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+  Group: [Group Name]
+  Members: [Member 1 Name] - [Student ID]
+           [Member 2 Name] - [Student ID]
+           [Member 3 Name] - [Student ID]
+  Page: admin.html (Dummy admin dashboard)
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Gamchawala</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- ===== Sidebar navigation ===== -->
+    <aside class="sidebar">
+      <p class="brand">Gamchawala Admin</p>
+      <nav>
+        <ul>
+          <li><a href="#stats" class="active">Dashboard</a></li>
+          <li><a href="#orders">Orders</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#stats">Members</a></li>
+          <li><a href="#sales">Reports</a></li>
+          <li><a href="index.html">Back to store</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+
+      <!-- ===== Top bar ===== -->
+      <header class="topbar">
+        <h1>Dashboard</h1>
+        <p>Logged in as <strong>Admin Nadia</strong></p>
+      </header>
+
+      <!-- ===== Summary cards ===== -->
+      <section id="stats" class="stats">
+        <article class="stat">
+          <h2>Today's revenue</h2>
+          <p>Tk 24,380</p>
+        </article>
+        <article class="stat">
+          <h2>Orders today</h2>
+          <p>31</p>
+        </article>
+        <article class="stat">
+          <h2>New members</h2>
+          <p>58</p>
+        </article>
+        <article class="stat">
+          <h2>Low-stock items</h2>
+          <p>4</p>
+        </article>
+      </section>
+
+      <!-- ===== Recent orders ===== -->
+      <!-- Amount = items + Tk 60 delivery + 5% VAT on items -->
+      <section id="orders" class="panel">
+        <h2>Recent orders</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Amount (Tk)</th>
+                <th>Payment</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#2041</td>
+                <td>Tasnim Rahman</td>
+                <td>11 Oct 2026</td>
+                <td>2,737.50</td>
+                <td>bKash</td>
+                <td><span class="badge pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td>#2040</td>
+                <td>Imran Hossain</td>
+                <td>10 Oct 2026</td>
+                <td>1,582.50</td>
+                <td>Nagad</td>
+                <td><span class="badge shipped">Shipped</span></td>
+              </tr>
+              <tr>
+                <td>#2039</td>
+                <td>Farzana Akter</td>
+                <td>10 Oct 2026</td>
+                <td>1,110.00</td>
+                <td>Card</td>
+                <td><span class="badge delivered">Delivered</span></td>
+              </tr>
+              <tr>
+                <td>#2038</td>
+                <td>Rakib Hasan</td>
+                <td>09 Oct 2026</td>
+                <td>396.00</td>
+                <td>Cash on delivery</td>
+                <td><span class="badge cancelled">Cancelled</span></td>
+              </tr>
+              <tr>
+                <td>#2037</td>
+                <td>Sadia Islam</td>
+                <td>08 Oct 2026</td>
+                <td>1,068.00</td>
+                <td>bKash</td>
+                <td><span class="badge delivered">Delivered</span></td>
+              </tr>
+              <tr>
+                <td>#2036</td>
+                <td>Arif Chowdhury</td>
+                <td>07 Oct 2026</td>
+                <td>1,792.50</td>
+                <td>Nagad</td>
+                <td><span class="badge shipped">Shipped</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== Monthly sales bar chart (HTML + CSS only) ===== -->
+      <!-- Each bar's height = that month's sales / highest month (April) -->
+      <section id="sales" class="panel">
+        <h2>Monthly sales (Tk thousand)</h2>
+        <div class="chart">
+          <div class="bar m1"><span>160</span></div>
+          <div class="bar m2"><span>95</span></div>
+          <div class="bar m3"><span>120</span></div>
+          <div class="bar m4"><span>80</span></div>
+          <div class="bar m5"><span>90</span></div>
+          <div class="bar m6"><span>110</span></div>
+        </div>
+        <div class="months">
+          <p>Apr</p><p>May</p><p>Jun</p><p>Jul</p><p>Aug</p><p>Sep</p>
+        </div>
+        <p class="note">April peak: Pohela Boishakh. June: Eid gifting.</p>
+      </section>
+
+      <!-- ===== Low stock + top sellers side by side ===== -->
+      <div id="products" class="two-col">
+        <section class="panel">
+          <h2>Low-stock alerts</h2>
+          <ul>
+            <li>GW-003 Neel Kuthi: 5 left</li>
+            <li>GW-006 Nakshi Kantha Stitch: 4 left</li>
+            <li>GW-007 Jamdani Jaal: 3 left</li>
+            <li class="out">GW-015 Borsha Megh: out of stock</li>
+          </ul>
+        </section>
+        <section class="panel">
+          <h2>Top-selling products</h2>
+          <ol>
+            <li>Lal-Sada Classic: 412 sold</li>
+            <li>Boishakhi Alpona: 368 sold</li>
+            <li>Rickshaw Rong: 290 sold</li>
+            <li>Gaye Holud: 244 sold</li>
+            <li>Nakshi Kantha Stitch: 131 sold</li>
+          </ol>
+        </section>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+  Group: [Group Name]
+  Members: [Member 1 Name] - [Student ID]
+           [Member 2 Name] - [Student ID]
+           [Member 3 Name] - [Student ID]
+  Page: register.html (Member registration form)
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Gamchawala</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Shared header ===== -->
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Gamchawala logo: the Bengali word গামছাওয়ালা on a red block-print label with a folded gamcha sticker" width="72" height="72">
+      Gamchawala
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="product-details.html">Product</a></li>
+        <li><a href="register.html" class="active">Register</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="weave"></div>
+
+  <main>
+
+    <h1>Join Gamchawala</h1>
+    <p>Members get early access to festival editions and 10% off their first order.</p>
+
+    <!-- ===== Registration form ===== -->
+    <form>
+
+      <!-- Group 1: account details -->
+      <fieldset>
+        <legend>Account details</legend>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password (at least 8 characters)</label>
+        <input type="password" id="password" name="password" minlength="8" required>
+
+        <label for="confirm">Confirm password</label>
+        <input type="password" id="confirm" name="confirm" minlength="8" required>
+      </fieldset>
+
+      <!-- Group 2: personal details -->
+      <fieldset>
+        <legend>Personal details</legend>
+
+        <label for="fullname">Full name</label>
+        <input type="text" id="fullname" name="fullname" required>
+
+        <!-- 11 digits: starts with 01, then 9 more digits -->
+        <label for="phone">Mobile number (01XXXXXXXXX)</label>
+        <input type="tel" id="phone" name="phone" pattern="01[0-9]{9}" placeholder="01712345678" required>
+
+        <label for="dob">Date of birth</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <p>Gender</p>
+        <div class="inline">
+          <label><input type="radio" name="gender" value="male" required> Male</label>
+          <label><input type="radio" name="gender" value="female"> Female</label>
+          <label><input type="radio" name="gender" value="other"> Other</label>
+        </div>
+
+        <label for="division">Division</label>
+        <select id="division" name="division" required>
+          <option value="">Choose your division</option>
+          <option>Barishal</option>
+          <option>Chattogram</option>
+          <option>Dhaka</option>
+          <option>Khulna</option>
+          <option>Mymensingh</option>
+          <option>Rajshahi</option>
+          <option>Rangpur</option>
+          <option>Sylhet</option>
+        </select>
+
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+      </fieldset>
+
+      <!-- Group 3: interests and agreement -->
+      <fieldset>
+        <legend>Interests</legend>
+
+        <p>Which series do you like?</p>
+        <div class="inline">
+          <label><input type="checkbox" name="interest" value="classic"> Classic Check</label>
+          <label><input type="checkbox" name="interest" value="festival"> Festival Edition</label>
+          <label><input type="checkbox" name="interest" value="artisan"> Artisan Craft</label>
+          <label><input type="checkbox" name="interest" value="nature"> Nature Series</label>
+        </div>
+
+        <label><input type="checkbox" name="newsletter"> Send me news about new designs and festival editions</label>
+        <label><input type="checkbox" name="terms" required> I agree to the terms and conditions</label>
+      </fieldset>
+
+      <button type="submit">Register</button>
+      <button type="reset">Clear form</button>
+    </form>
+
+  </main>
+
+  <!-- ===== Shared footer ===== -->
+  <div class="fringe"></div>
+  <footer class="site-footer">
+    <div>
+      <h2>Contact</h2>
+      <p>House 21, Road 7, Dhanmondi, Dhaka 1205</p>
+      <p>Phone: 01700-000000 | Email: hello@gamchawala.com.bd</p>
+    </div>
+    <div>
+      <h2>Follow us</h2>
+      <p><a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">TikTok</a></p>
+    </div>
+    <div>
+      <h2>Staff</h2>
+      <p><a href="admin.html">Admin Dashboard</a></p>
+    </div>
+    <p class="copyright">&copy; 2026 Gamchawala. Woven in Bangladesh.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--
+  Group: [Group Name]
+  Members: [Member 1 Name] - [Student ID]
+           [Member 2 Name] - [Student ID]
+           [Member 3 Name] - [Student ID]
+  Page: checkout.html (Order summary + transaction form)
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Gamchawala</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Shared header ===== -->
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Gamchawala logo: the Bengali word গামছাওয়ালা on a red block-print label with a folded gamcha sticker" width="72" height="72">
+      Gamchawala
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="product-details.html">Product</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="checkout.html" class="active">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="weave"></div>
+
+  <main>
+
+    <h1>Checkout</h1>
+
+    <!-- ===== Order summary ===== -->
+    <section class="table-wrap">
+      <table>
+        <caption>Your order</caption>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Unit price (Tk)</th>
+            <th>Line total (Tk)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nakshi Kantha Stitch</td>
+            <td>1</td>
+            <td>1,250.00</td>
+            <td>1,250.00</td>
+          </tr>
+          <tr>
+            <td>Lal-Sada Classic</td>
+            <td>2</td>
+            <td>350.00</td>
+            <td>700.00</td>
+          </tr>
+          <tr>
+            <td>Rickshaw Rong</td>
+            <td>1</td>
+            <td>600.00</td>
+            <td>600.00</td>
+          </tr>
+        </tbody>
+        <!-- Subtotal = 1250 + 700 + 600 = 2550. VAT = 5% of 2550 = 127.50 -->
+        <tfoot>
+          <tr>
+            <td colspan="3">Subtotal</td>
+            <td>2,550.00</td>
+          </tr>
+          <tr>
+            <td colspan="3">Delivery charge (inside Dhaka)</td>
+            <td>60.00</td>
+          </tr>
+          <tr>
+            <td colspan="3">VAT (5% of subtotal)</td>
+            <td>127.50</td>
+          </tr>
+          <tr>
+            <td colspan="3">Grand total</td>
+            <td>2,737.50</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- ===== Shipping and payment form ===== -->
+    <!-- After Place order, the form reloads this page with #order-confirmed
+         at the end of the address, which shows the confirmation box -->
+    <form action="checkout.html#order-confirmed">
+
+      <fieldset>
+        <legend>Add more gamchas</legend>
+        <!-- Dropdown with pictures: <details> opens and closes by itself -->
+        <details class="picker">
+          <summary>Choose from all 15 gamchas</summary>
+          <div class="picker-grid">
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-001">
+              <img src="images/gamcha-01.jpg" alt="Lal-Sada Classic gamcha">
+              Lal-Sada Classic<br>Tk 350
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-002">
+              <img src="images/gamcha-02.jpg" alt="Sobuj-Lal Bijoy gamcha">
+              Sobuj-Lal Bijoy<br>Tk 450
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-003">
+              <img src="images/gamcha-03.jpg" alt="Neel Kuthi gamcha">
+              Neel Kuthi<br>Tk 650
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-004">
+              <img src="images/gamcha-04.jpg" alt="Gramer Gamcha gamcha">
+              Gramer Gamcha<br>Tk 320
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-005">
+              <img src="images/gamcha-05.jpg" alt="Boishakhi Alpona gamcha">
+              Boishakhi Alpona<br>Tk 550
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-006">
+              <img src="images/gamcha-06.jpg" alt="Nakshi Kantha Stitch gamcha">
+              Nakshi Kantha Stitch<br>Tk 1,250
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-007">
+              <img src="images/gamcha-07.jpg" alt="Jamdani Jaal gamcha">
+              Jamdani Jaal<br>Tk 1,450
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-008">
+              <img src="images/gamcha-08.jpg" alt="Rickshaw Rong gamcha">
+              Rickshaw Rong<br>Tk 600
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-009">
+              <img src="images/gamcha-09.jpg" alt="Shapla Pukur gamcha">
+              Shapla Pukur<br>Tk 480
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-010">
+              <img src="images/gamcha-10.jpg" alt="Ilish Rupali gamcha">
+              Ilish Rupali<br>Tk 520
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-011">
+              <img src="images/gamcha-11.jpg" alt="Sundarbon gamcha">
+              Sundarbon<br>Tk 550
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-012">
+              <img src="images/gamcha-12.jpg" alt="Gaye Holud gamcha">
+              Gaye Holud<br>Tk 500
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-013">
+              <img src="images/gamcha-13.jpg" alt="Shorisha Khet gamcha">
+              Shorisha Khet<br>Tk 450
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-014">
+              <img src="images/gamcha-14.jpg" alt="Terracotta Mondir gamcha">
+              Terracotta Mondir<br>Tk 750
+            </label>
+            <label>
+              <input type="checkbox" name="gamcha" value="GW-015">
+              <img src="images/gamcha-15.jpg" alt="Borsha Megh gamcha">
+              Borsha Megh<br>Tk 480
+            </label>
+          </div>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>Shipping information</legend>
+
+        <label for="name">Recipient name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Phone (01XXXXXXXXX)</label>
+        <input type="tel" id="phone" name="phone" pattern="01[0-9]{9}" placeholder="01712345678" required>
+
+        <label for="address">Delivery address</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+
+        <label for="city">Area or city</label>
+        <input type="text" id="city" name="city" placeholder="e.g. Dhanmondi, Dhaka" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Payment method</legend>
+        <div class="inline">
+          <label><input type="radio" name="payment" value="bkash" required> bKash</label>
+          <label><input type="radio" name="payment" value="nagad"> Nagad</label>
+          <label><input type="radio" name="payment" value="card"> Credit / debit card</label>
+          <label><input type="radio" name="payment" value="cod"> Cash on delivery</label>
+        </div>
+      </fieldset>
+
+      <button type="submit">Place order</button>
+    </form>
+
+    <!-- Order confirmed box: only visible when the address ends in #order-confirmed -->
+    <div id="order-confirmed" class="popup confirm">
+      <div class="popup-box">
+        <h2>Order confirmed!</h2>
+        <p>Thank you for shopping with Gamchawala. We will send you a delivery tracking link by SMS, so you can see exactly where your gamcha is at any moment.</p>
+        <a href="index.html" class="btn">Back to home</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== Shared footer ===== -->
+  <div class="fringe"></div>
+  <footer class="site-footer">
+    <div>
+      <h2>Contact</h2>
+      <p>House 21, Road 7, Dhanmondi, Dhaka 1205</p>
+      <p>Phone: 01700-000000 | Email: hello@gamchawala.com.bd</p>
+    </div>
+    <div>
+      <h2>Follow us</h2>
+      <p><a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">TikTok</a></p>
+    </div>
+    <div>
+      <h2>Staff</h2>
+      <p><a href="admin.html">Admin Dashboard</a></p>
+    </div>
+    <p class="copyright">&copy; 2026 Gamchawala. Woven in Bangladesh.</p>
+  </footer>
+
+</body>
+</html>

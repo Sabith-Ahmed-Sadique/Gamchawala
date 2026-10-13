@@ -1,0 +1,221 @@
+/* ==========================================================
+   Gamchawala : admin dashboard stylesheet
+   Used by: admin.html only (different layout from the store)
+   ========================================================== */
+
+/* ---------- 1. Colours (same scheme as the store) ---------- */
+:root {
+  --green: #4f5d3f;
+  --red: #9e3b2b;
+  --gold: #c2a15a;
+  --bg: #ebe8dc;
+  --line: #dcd6c4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--bg);
+  color: #1d1d1d;
+}
+
+/* ---------- 2. Page layout: sidebar + main ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: 100vh;
+}
+
+main {
+  padding: 20px;
+  min-width: 0;   /* lets the wide table scroll instead of stretching the page */
+}
+
+h1, h2 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* ---------- 3. Sidebar ---------- */
+.sidebar {
+  background-color: var(--green);
+  padding: 20px 0;
+}
+
+.brand {
+  color: var(--gold);
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 24px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-left: 4px solid var(--gold);
+}
+
+/* ---------- 4. Top bar ---------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 0 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* ---------- 5. Summary cards ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  background-color: #ffffff;
+  border-top: 4px solid var(--red);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.stat h2 {
+  font-size: 0.9rem;
+  color: #666666;
+  margin: 0;
+}
+
+.stat p {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--green);
+  margin: 8px 0 0;
+}
+
+/* ---------- 6. Panels and tables ---------- */
+.panel {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 4px 20px 16px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px;
+  text-align: left;
+}
+
+/* ---------- 7. Status badges (one class per status) ---------- */
+.badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.pending   { background-color: #fff3c4; color: #8a6d00; }
+.shipped   { background-color: #d6e9ff; color: #0b4f9c; }
+.delivered { background-color: #d4f5dc; color: #1b6e30; }
+.cancelled { background-color: #ffd9d9; color: #a11b1b; }
+
+/* ---------- 8. Bar chart (no images, no JavaScript) ---------- */
+.chart {
+  display: flex;
+  align-items: flex-end;   /* bars grow up from the bottom */
+  gap: 16px;
+  height: 220px;
+  border-bottom: 2px solid #333333;
+}
+
+.bar {
+  flex: 1;
+  background-color: var(--red);
+  border-radius: 4px 4px 0 0;
+  text-align: center;
+}
+
+.bar span {
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+/* Height of each month: sales / 160 (the highest month, April) */
+.m1 { height: 100%; }
+.m2 { height: 59%; }
+.m3 { height: 75%; }
+.m4 { height: 50%; }
+.m5 { height: 56%; }
+.m6 { height: 69%; }
+
+.note {
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.months {
+  display: flex;
+  gap: 16px;
+}
+
+.months p {
+  flex: 1;
+  text-align: center;
+  margin: 6px 0 0;
+}
+
+/* ---------- 9. Low stock + top sellers ---------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.out {
+  color: var(--red);
+  font-weight: bold;
+}
+
+/* ---------- 10. Mobile layout ---------- */
+@media (max-width: 768px) {
+  .layout,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+  }
+}

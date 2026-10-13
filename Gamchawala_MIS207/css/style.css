@@ -1,0 +1,685 @@
+/* ==========================================================
+   Gamchawala : storefront stylesheet
+   Used by: index, catalog, product-details, register, checkout
+   Look: calm and editorial. Cream background, big serif
+   headings, soft rounded cards, muted gamcha colours.
+   ========================================================== */
+
+/* ---------- 1. Colour scheme (CSS variables) ---------- */
+:root {
+  --bg: #ebe8dc;      /* page background */
+  --panel: #f5f2e8;   /* hero and cards */
+  --ink: #23241c;     /* text */
+  --muted: #6b6a5c;   /* small grey text */
+  --red: #9e3b2b;     /* muted gamcha red */
+  --green: #4f5d3f;   /* sage green */
+  --gold: #c2a15a;
+  --line: #dcd6c4;
+}
+
+/* ---------- 2. Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background-color: var(--bg);
+  line-height: 1.6;
+}
+
+main {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Headings use a serif font for an elegant, editorial feel */
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  color: var(--ink);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Every gamcha photo keeps the same 3:4 shape */
+.card img,
+.gallery img,
+.product img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ---------- 3. Header and navigation ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+/* All nav links sit together inside one rounded pill */
+.site-header ul {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 6px;
+  background-color: var(--panel);
+  border-radius: 999px;
+}
+
+.site-header nav a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+}
+
+.site-header nav a:hover {
+  background-color: #ffffff;
+}
+
+/* The page you are on is highlighted */
+.site-header nav a.active {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Thin woven stripe under the header, like the border of a gamcha */
+.weave {
+  height: 4px;
+  max-width: 1140px;
+  margin: 0 auto;
+  background: repeating-linear-gradient(90deg,
+    var(--red) 0 24px,
+    var(--panel) 24px 32px,
+    var(--green) 32px 56px,
+    var(--panel) 56px 64px);
+}
+
+/* ---------- 4. Buttons (one style everywhere) ---------- */
+.btn,
+button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 12px 22px;
+  font-size: 1rem;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover,
+button:hover {
+  background-color: var(--ink);
+  color: #ffffff;
+}
+
+/* ---------- 5. Home page ---------- */
+/* Hero: a big colour card. Three columns: text | gamcha | price */
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 0.7fr;
+  align-items: center;
+  gap: 24px;
+  min-height: 560px;
+  padding: 48px 48px 28px;
+  border-radius: 24px;
+  color: #ffffff;
+  /* 1st shadow: dark edges INSIDE the card (inset), so the colour has depth
+     2nd shadow: the card lifting off the page */
+  box-shadow: inset 0 0 180px rgba(0, 0, 0, 0.55), 0 24px 60px rgba(0, 0, 0, 0.2);
+  /* soft spotlight behind the gamcha, on top of the changing colour */
+  background-image: radial-gradient(circle at 58% 42%, rgba(255, 255, 255, 0.28), transparent 55%);
+  animation: hero-colour 16s infinite;
+}
+
+/* The background colour follows the gamcha on screen (4 seconds each) */
+@keyframes hero-colour {
+  0%, 22%   { background-color: #8c1f1a; }   /* Boishakhi Alpona: red */
+  27%, 47%  { background-color: #111a30; }   /* Neel Kuthi: deep indigo */
+  52%, 72%  { background-color: #8a5a0c; }   /* Gaye Holud: turmeric */
+  77%, 97%  { background-color: #3a4723; }   /* Sundarbon: olive green */
+  100%      { background-color: #8c1f1a; }
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);   /* smallest, preferred, largest */
+  line-height: 1.1;
+  margin: 12px 0 16px;
+}
+
+/* Stack the four items in the same grid cell, on top of each other */
+.slides,
+.slide-info,
+.next {
+  display: grid;
+}
+
+.slides > *,
+.slide-info > *,
+.next > * {
+  grid-area: 1 / 1;
+  animation: show 16s infinite both;
+}
+
+/* Each item waits its turn: 0s, 4s, 8s, 12s */
+.slides > :nth-child(2), .slide-info > :nth-child(2), .next > :nth-child(2) { animation-delay: 4s; }
+.slides > :nth-child(3), .slide-info > :nth-child(3), .next > :nth-child(3) { animation-delay: 8s; }
+.slides > :nth-child(4), .slide-info > :nth-child(4), .next > :nth-child(4) { animation-delay: 12s; }
+
+/* Fade and slide in, stay for about 3 seconds, fade out */
+@keyframes show {
+  0%   { opacity: 0; transform: translateY(30px); }
+  5%   { opacity: 1; transform: translateY(0); }
+  22%  { opacity: 1; transform: translateY(0); }
+  27%  { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 0; }
+}
+
+/* The gamcha floats gently up and down, with a shadow under it */
+.slides {
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+.slides img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 25px rgba(0, 0, 0, 0.45));
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-14px); }
+}
+
+/* Right column: price and sizes */
+.hero-side {
+  text-align: right;
+}
+
+.slide-name {
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.slide-price {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.6rem;
+  margin: 4px 0 0;
+}
+
+.hero-side del {
+  font-size: 1.4rem;
+  opacity: 0.7;
+}
+
+/* Size choices drawn as circles */
+.sizes span {
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 0.85rem;
+}
+
+.sizes .on {
+  background-color: #ffffff;
+  color: var(--ink);
+}
+
+/* Bottom row of the hero */
+.hero-caption {
+  grid-column: 2;
+  text-align: center;
+  margin: 0;
+}
+
+.next {
+  grid-column: 3;
+  justify-self: end;
+  width: 80px;
+}
+
+/* Featured products */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background-color: var(--panel);
+  border-radius: 16px;
+  padding: 14px;
+  text-align: center;
+}
+
+.price {
+  color: var(--red);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Business model statement */
+.model-box {
+  background-color: var(--panel);
+  border-radius: 16px;
+  padding: 16px 24px;
+}
+
+/* Business Model Canvas: 9 blocks in a 3 x 3 grid */
+.canvas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.canvas article {
+  background-color: var(--panel);
+  border-radius: 16px;
+  border-top: 4px solid var(--red);
+  padding: 14px 18px;
+}
+
+/* Every second block gets a green top, like alternating gamcha stripes */
+.canvas article:nth-child(even) {
+  border-top-color: var(--green);
+}
+
+.canvas h3 {
+  margin-top: 0;
+}
+
+/* ---------- 6. Tables (catalog and checkout) ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--panel);
+}
+
+caption {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  padding: 10px;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--ink);
+  color: #ffffff;
+  font-weight: normal;
+}
+
+tfoot td {
+  font-weight: bold;
+  background-color: #ece7d7;
+}
+
+.table-wrap {
+  margin-bottom: 40px;
+}
+
+/* Stock status labels */
+.stock {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.in-stock  { background-color: var(--green); }
+.low-stock { background-color: #c07a2c; }
+.out-stock { background-color: var(--red); }
+
+/* ---------- 7. Product gallery (CSS Grid) ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.gallery figure {
+  margin: 0;
+  background-color: var(--panel);
+  border-radius: 14px;
+  padding: 8px;
+}
+
+/* Cards lift slightly when you hover over them */
+.gallery figure:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+/* Name, price and short detail under each gallery photo, one per line */
+.gallery figcaption span {
+  display: block;
+}
+
+.gallery .price {
+  font-size: 1rem;
+  margin: 2px 0;
+}
+
+.gallery .detail {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ---------- 8. Product details ---------- */
+.breadcrumb a {
+  color: var(--muted);
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 16px;
+}
+
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.old-price {
+  color: var(--muted);
+}
+
+.review {
+  background-color: var(--panel);
+  border-radius: 16px;
+  padding: 14px 22px;
+  margin-bottom: 16px;
+}
+
+.stars {
+  color: var(--gold);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+/* ---------- 9. Forms (register and checkout) ---------- */
+fieldset {
+  background-color: var(--panel);
+  border: none;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  padding: 20px 24px;
+}
+
+/* float keeps the title INSIDE the box instead of sitting on its edge */
+legend {
+  float: left;
+  width: 100%;
+  margin-bottom: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+}
+
+/* whatever comes after the title starts on a new line below it */
+legend + * {
+  clear: both;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+/* Darker outline on the box you are typing in */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+
+/* Radio buttons and checkboxes sit on one line with their text */
+.inline label {
+  display: inline-block;
+  margin-right: 18px;
+}
+
+/* ---------- 10. Footer ---------- */
+/* Loose threads hanging above the footer, like gamcha fringe */
+.fringe {
+  height: 16px;
+  margin-top: 48px;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 1px, transparent 1px 6px);
+}
+
+.site-footer {
+  background-color: var(--ink);
+  color: var(--bg);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 28px 16px;
+}
+
+.site-footer h2 {
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+.site-footer a {
+  color: var(--bg);
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* ---------- 11. "Type gamcha to enter" popup (no JavaScript) ---------- */
+.popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(35, 36, 28, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.popup-box {
+  background-color: var(--panel);
+  border-radius: 20px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.popup-box img {
+  margin: 0 auto;
+  max-height: 260px;
+  border-radius: 12px;
+}
+
+.popup-box input {
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* When the input matches pattern="[Gg]amcha" it becomes :valid,
+   and :has() hides the whole popup */
+.popup:has(input:valid) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ---------- 12. Checkout: gamcha picker (no JavaScript) ---------- */
+/* <details> is a built-in dropdown: click the summary to open or close it */
+.picker summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  background-color: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.picker-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.picker-grid label {
+  margin: 0;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.picker-grid img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 6px;
+  margin: 6px 0;
+}
+
+/* a ticked gamcha gets a red outline */
+.picker-grid label:has(input:checked) {
+  outline: 3px solid var(--red);
+}
+
+/* ---------- 13. "Order confirmed" box (no JavaScript) ---------- */
+/* Hidden at first. Shown when the page address ends in #order-confirmed */
+.confirm {
+  display: none;
+}
+
+.confirm:target {
+  display: flex;
+}
+
+/* ---------- 14. Mobile layout ---------- */
+@media (max-width: 768px) {
+  .site-header {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .site-header ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Hero becomes one column: text, gamcha, price */
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 32px 20px;
+  }
+
+  .hero-side,
+  .hero-caption {
+    grid-column: 1;
+    text-align: center;
+  }
+
+  .next {
+    display: none;
+  }
+
+  .cards,
+  .canvas,
+  .product {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery,
+  .picker-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Wide tables scroll sideways instead of breaking the page */
+  .table-wrap {
+    overflow-x: auto;
+  }
+}

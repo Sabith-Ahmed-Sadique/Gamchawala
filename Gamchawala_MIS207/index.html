@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--
+  Group: [Group Name]
+  Members: [Member 1 Name] - [Student ID]
+           [Member 2 Name] - [Student ID]
+           [Member 3 Name] - [Student ID]
+  Page: index.html (Home + Business Model)
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamchawala | Handwoven Heritage Gamchas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Entry popup: type "gamcha" to enter (HTML + CSS only) ===== -->
+  <div class="popup">
+    <div class="popup-box">
+      <figure>
+        <img src="images/gamcha-01.jpg" alt="Folded red and white checked Lal-Sada gamcha with a striped border and cream fringe">
+        <figcaption>Ei gorome gamcha chara cholbe?</figcaption>
+      </figure>
+      <label for="enter">Type <strong>gamcha</strong> to enter the store:</label>
+      <input type="text" id="enter" pattern="[Gg]amcha" required placeholder="gamcha..." autocomplete="off">
+    </div>
+  </div>
+
+  <!-- ===== Shared header ===== -->
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Gamchawala logo: the Bengali word গামছাওয়ালা on a red block-print label with a folded gamcha sticker" width="72" height="72">
+      Gamchawala
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="product-details.html">Product</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="weave"></div>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <!-- The background colour and the gamcha change by themselves
+         every 4 seconds, using CSS animations only (see style.css) -->
+    <section class="hero">
+
+      <!-- Left: headline (stays the same) -->
+      <div class="hero-text">
+        <p class="eyebrow">Handwoven in Bangladesh</p>
+        <h1>Woven by hand.<br>Worn with pride.</h1>
+        <p>Not just a towel. A piece of Bangla you can carry every day: pure cotton, handwoven, and made by a weaver we know by name.</p>
+        <a href="catalog.html" class="btn">Shop the collection</a>
+      </div>
+
+      <!-- Centre: four gamchas stacked on top of each other, shown one at a time -->
+      <div class="slides">
+        <img src="images/hero-1.webp" alt="Red Boishakhi Alpona gamcha printed with white lotus, fish and alpona swirls">
+        <img src="images/hero-2.webp" alt="Indigo Neel Kuthi gamcha printed with river waves, lotus and fish">
+        <img src="images/hero-3.webp" alt="Turmeric yellow Gaye Holud gamcha embroidered with birds and flowers">
+        <img src="images/hero-4.webp" alt="Olive green Sundarbon gamcha embroidered with vines, leaves and deer">
+      </div>
+
+      <!-- Right: name and price of the gamcha on screen, plus sizes -->
+      <div class="hero-side">
+        <div class="slide-info">
+          <div>
+            <p class="slide-name">Boishakhi Alpona</p>
+            <p class="slide-price">Tk 550</p>
+            <del>Tk 700</del>
+          </div>
+          <div>
+            <p class="slide-name">Neel Kuthi</p>
+            <p class="slide-price">Tk 650</p>
+            <del>Tk 800</del>
+          </div>
+          <div>
+            <p class="slide-name">Gaye Holud</p>
+            <p class="slide-price">Tk 500</p>
+            <del>Tk 650</del>
+          </div>
+          <div>
+            <p class="slide-name">Sundarbon</p>
+            <p class="slide-price">Tk 550</p>
+            <del>Tk 700</del>
+          </div>
+        </div>
+        <p>Choose your length (cm):</p>
+        <p class="sizes"><span class="on">150</span> <span>180</span> <span>210</span></p>
+      </div>
+
+      <!-- Bottom row: caption and the "next up" gamcha -->
+      <p class="hero-caption">Pure cotton,<br>woven in Bangladesh</p>
+      <div class="next">
+        <img src="images/hero-2.webp" alt="Next: Neel Kuthi">
+        <img src="images/hero-3.webp" alt="Next: Gaye Holud">
+        <img src="images/hero-4.webp" alt="Next: Sundarbon">
+        <img src="images/hero-1.webp" alt="Next: Boishakhi Alpona">
+      </div>
+    </section>
+
+    <!-- ===== Featured products ===== -->
+    <section>
+      <h2>Featured gamchas</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="images/gamcha-06.jpg" alt="Cream checked gamcha with a nakshi kantha embroidered border of a fish, a lotus, leaves and a sun">
+          <h3>Nakshi Kantha Stitch</h3>
+          <p class="price">Tk 1,250</p>
+          <a href="product-details.html" class="btn">View details</a>
+        </article>
+        <article class="card">
+          <img src="images/gamcha-08.jpg" alt="Pink and turquoise checked gamcha with a rickshaw-art border of flowers and a peacock">
+          <h3>Rickshaw Rong</h3>
+          <p class="price">Tk 600</p>
+          <a href="product-details.html" class="btn">View details</a>
+        </article>
+        <article class="card">
+          <img src="images/gamcha-01.jpg" alt="Folded red and white checked Lal-Sada gamcha with a striped border and cream fringe">
+          <h3>Lal-Sada Classic</h3>
+          <p class="price">Tk 350</p>
+          <a href="product-details.html" class="btn">View details</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== E-commerce category and revenue model ===== -->
+    <section>
+      <h2>How our business works</h2>
+      <div class="model-box">
+        <p><strong>E-commerce category: B2C.</strong> Gamchawala is our own brand. We buy finished gamchas from handloom weavers at a fair price and sell them directly to individual customers through this website.</p>
+        <p><strong>Revenue model: direct sales.</strong> We earn the margin on every gamcha sold (Tk 320 to Tk 1,450), plus festival gift bundles for Pohela Boishakh and Eid.</p>
+        <p><strong>Why it works:</strong> Every Bangladeshi owns a gamcha, but the ones in the bazaar all look the same. We turn it into a heritage product people are proud to wear, gift and post online, while giving rural weavers a steady market.</p>
+      </div>
+    </section>
+
+    <!-- ===== Business Model Canvas (CSS Grid, 9 blocks) ===== -->
+    <section>
+      <h2>Business Model Canvas</h2>
+      <div class="canvas">
+        <article>
+          <h3>Key Partners</h3>
+          <p>Handloom weaver cooperatives in Sirajganj and Kushtia, nakshi kantha artisans, bKash and Nagad, SSLCommerz, Pathao Courier.</p>
+        </article>
+        <article>
+          <h3>Key Activities</h3>
+          <p>Designing new patterns each season, quality checking every piece, product photography, packaging and social media.</p>
+        </article>
+        <article>
+          <h3>Key Resources</h3>
+          <p>Our weaver network, in-house design team, this website and the Gamchawala brand story.</p>
+        </article>
+        <article>
+          <h3>Value Proposition</h3>
+          <p>Pure cotton, handwoven gamchas with heritage designs you will not find in any bazaar, each tagged with the name of the weaver who made it.</p>
+        </article>
+        <article>
+          <h3>Customer Relationships</h3>
+          <p>A weaver story card in every parcel, a Facebook community, and early access to festival editions for members.</p>
+        </article>
+        <article>
+          <h3>Channels</h3>
+          <p>This website, Facebook and Instagram, and pop-up stalls at Boishakhi melas and university fests.</p>
+        </article>
+        <article>
+          <h3>Customer Segments</h3>
+          <p>Urban Bangladeshis aged 18 to 35 who love heritage fashion, and anyone buying a meaningful gift.</p>
+        </article>
+        <article>
+          <h3>Cost Structure</h3>
+          <p>Fair payments to weavers, cotton yarn and natural dyes, packaging, courier charges, Facebook ads and hosting.</p>
+        </article>
+        <article>
+          <h3>Revenue Streams</h3>
+          <p>Direct sales of gamchas (Tk 320 to Tk 1,450) and festival gift bundles.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Shared footer ===== -->
+  <div class="fringe"></div>
+  <footer class="site-footer">
+    <div>
+      <h2>Contact</h2>
+      <p>House 21, Road 7, Dhanmondi, Dhaka 1205</p>
+      <p>Phone: 01700-000000 | Email: hello@gamchawala.com.bd</p>
+    </div>
+    <div>
+      <h2>Follow us</h2>
+      <p><a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">TikTok</a></p>
+    </div>
+    <div>
+      <h2>Staff</h2>
+      <p><a href="admin.html">Admin Dashboard</a></p>
+    </div>
+    <p class="copyright">&copy; 2026 Gamchawala. Woven in Bangladesh.</p>
+  </footer>
+
+</body>
+</html>
